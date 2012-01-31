@@ -1,1 +1,23 @@
 Tshock Web Admin is a project aimed at allowing full administration of TShock servers from a web-based panel.
+
+Features
+--------------------
+
++Priveledge Adjustment
++Schedule broadcasts
++Server start/stop/restart
++Ban/unban Users
++Ban/unban Items
++Map Uploading
++Adjust User priviledges
++Easy editing of the config file
++Reload settings/plugins
++Plugin upload
++Send server broadcast
+
+
+----------------------------
+
+Will use MySQLi to interact with mysql database.
+Admin panel will also directly interact with tshock's database.
+This will give it an easy method of item/user bans.

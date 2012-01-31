@@ -1,10 +1,12 @@
 <?php
-
 /**
+ * RestAPI
  *
- *
- * @version $Id$
- * @copyright 2012
+ * @package RestAPI Class (Tshock-web-admin)
+ * @author Ernest
+ * @copyright Copyright (c) 2012
+ * @version 0.1
+ * @access public
  */
 
 //Noon=27000.0

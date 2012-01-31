@@ -1,0 +1,1 @@
+<a href="{$url}/action.php?act=logout">Logout</a>
