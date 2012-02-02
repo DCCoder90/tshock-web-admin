@@ -23,7 +23,7 @@ class RestAPI{
 	private $user; //Admin username
 	private $pass; //Admin password
 
-	public function __construct($ip,$port,$token=null,$user=null,$pass=null){
+	public function set_server($ip,$port,$token=null,$user=null,$pass=null){
 		$this->ip=$ip;
 		$this->port=(int)$port;
 		$this->token=$token;
@@ -83,8 +83,7 @@ class RestAPI{
 	//Server Endpoints
 	/////////////////////////
 	public function server_status(){
-		$token=$this->get_token();
-		$json=$this->get_json("/status","set");
+		$json=$this->get_json("/status",false);
 		if($json['status']==200){
 			return $json;
 		}else{
