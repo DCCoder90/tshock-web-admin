@@ -8,10 +8,3 @@
 	<link rel="icon" type="image/png" href="{$url}/favicon.ico" />
 </head>
 <body>
-
-<div id="left_content">
-{if $navigate eq 1}
-	{include file='inc/navigation.tpl'}
-{/if}
-</div>
-<div id="body_content">
