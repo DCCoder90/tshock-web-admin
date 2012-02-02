@@ -24,7 +24,9 @@ $row=$result->fetch_assoc();
 $result->close();
 
 define("HOME_URL",$row['site_url']);
+define("SITE_NAME",$row['site_title']);
 $smarty->assign("url",$row['site_url']);
+$smarty->assign("site_title",$row['site_title']);
 
 if($_SESION['logged']==1){
 	$smarty->assign("navigate",1);
