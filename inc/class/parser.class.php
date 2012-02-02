@@ -1,12 +1,4 @@
 <?php
-
-/**
- *
- *
- * @version $Id$
- * @copyright 2012
- */
-
 class parser{
 
 	//Returns and array named $log
