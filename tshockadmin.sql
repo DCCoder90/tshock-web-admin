@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 31, 2012 at 08:48 AM
+-- Generation Time: Feb 02, 2012 at 06:09 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -26,14 +26,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `log_ftp`
 --
 
-CREATE TABLE `log_ftp` (
+CREATE TABLE IF NOT EXISTS `log_ftp` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server_id` int(11) NOT NULL,
   `port` int(5) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `user_pass` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -41,12 +41,12 @@ CREATE TABLE `log_ftp` (
 -- Table structure for table `log_local`
 --
 
-CREATE TABLE `log_local` (
+CREATE TABLE IF NOT EXISTS `log_local` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server_id` int(11) NOT NULL,
   `path` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,7 @@ CREATE TABLE `log_local` (
 -- Table structure for table `servers`
 --
 
-CREATE TABLE `servers` (
+CREATE TABLE IF NOT EXISTS `servers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(15) NOT NULL,
   `port` int(5) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `servers` (
   `log_type` int(1) NOT NULL DEFAULT '0' COMMENT '0=Local log 1=Remote log via FTP',
   `log_name` varchar(255) NOT NULL COMMENT 'Log file name',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -70,15 +70,19 @@ CREATE TABLE `servers` (
 -- Table structure for table `server_logs`
 --
 
-CREATE TABLE `server_logs` (
+CREATE TABLE IF NOT EXISTS `server_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server_id` int(11) NOT NULL,
   `log_date` varchar(20) NOT NULL,
   `log_type` int(2) NOT NULL,
-  `log_log` text NOT NULL,
+  `log_flag` varchar(20) NOT NULL,
+  `log_user` varchar(255) NOT NULL,
+  `log_action` varchar(255) NOT NULL,
+  `log_info` tinytext NOT NULL,
+  `log_misc` tinytext NOT NULL,
   `date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -86,11 +90,14 @@ CREATE TABLE `server_logs` (
 -- Table structure for table `settings`
 --
 
-CREATE TABLE `settings` (
+CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `site_url` varchar(255) NOT NULL,
+  `site_title` varchar(255) NOT NULL,
+  `meta_desc` tinytext NOT NULL,
+  `meta_keywords` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -98,13 +105,13 @@ CREATE TABLE `settings` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_pass` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -112,13 +119,13 @@ CREATE TABLE `users` (
 -- Table structure for table `webadmin_logs`
 --
 
-CREATE TABLE `webadmin_logs` (
+CREATE TABLE IF NOT EXISTS `webadmin_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(255) NOT NULL,
   `log` tinytext NOT NULL,
   `date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
