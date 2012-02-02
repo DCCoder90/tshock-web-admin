@@ -1,3 +1,36 @@
+body,html{
+		background-color:#000000;
+		font-size:14px;
+		font-family:arial;
+		margin:0px;
+		padding:0px;
+		color:#00FF00;
+}
+
+/*Links*/
+a:link {
+		color:#00FF00;
+		text-decoration:none;
+		font-weight: bold;
+}
+a:visited {
+		color:#00FF00;
+		text-decoration:none;
+		font-weight: bold;
+}
+a:active {
+		color:#00FF00;
+		text-decoration:none;
+		font-weight: bold;
+}
+a:hover {
+		color:#00FF00;
+		text-decoration:underline;
+		font-weight: bold;
+}
+
+/*Misc*/
+
 div{
 	border: 2px solid gray;
 }
@@ -33,3 +66,10 @@ div{
 	width: 100%;
 	height: 2%;
 }
+
+/* JQuery Stuffs */
+
+#server_list .ui-selecting { background: #FECA40; }
+#server_list .ui-selected { background: #F39814; color: white; }
+#server_list { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#server_list li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }

@@ -1,8 +1,16 @@
-Log Types
------------
+-------------
+| Log Types |
+-------------
 0	Command
 1	Utils
 2	Tshock
 3	Hook
 4	Error
 5	Chat
+
+
+---------
+| To-do |
+---------
+
+FINISH WORKING ON SERVER SELECT FUNCTION!
