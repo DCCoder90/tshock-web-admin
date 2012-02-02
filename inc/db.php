@@ -27,6 +27,8 @@ define("HOME_URL",$row['site_url']);
 define("SITE_NAME",$row['site_title']);
 $smarty->assign("url",$row['site_url']);
 $smarty->assign("site_title",$row['site_title']);
+$smarty->assign("meta_keywords",$row['meta_keywords']);
+$smarty->assign("meta_desc",$row['meta_desc']);
 
 if($_SESION['logged']==1){
 	$smarty->assign("navigate",1);
