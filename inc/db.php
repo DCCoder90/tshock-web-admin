@@ -6,6 +6,7 @@ $database=array(
 "db"=>""
 );
 
+define("HASH_SALT","1234");
 //////////////////////////
 //DO NOT EDIT BELOW HERE!
 //////////////////////////
