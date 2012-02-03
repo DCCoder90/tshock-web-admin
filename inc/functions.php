@@ -39,6 +39,7 @@ function prep_array($array,$i=false,$ht=1, $escape=1)
 	}
 	return $newarray;
 }
+
 /*
    Prepare a string to be added into the database
    @author Sildaekar Decrura <admin@rejectedfreaks.net>
@@ -66,5 +67,33 @@ function prep($string, $ht = true, $escape = true)
 		$string = addslashes($string);
 	}
 	return $string;
+}
+
+/*
+   Prepare an array to be added into the database
+   @author Sildaekar
+   @since 2012-02-02
+
+   @return array Returns array of alerts
+*/
+function get_alerts(){
+	global $db;
+	$result=$db->query("SELECT * FROM `server_logs` WHERE `priority`=1 ORDER BY `id` DESC LIMIT 5");
+	$rows=$result->fetch_all(MYSQLI_ASSOC);
+	$result->close();
+
+	$alerts=array();
+
+	foreach($rows as $row){
+		$id=$row['server_id'];
+		$result=$db->query("SELECT `name` AS `name` FROM `servers` WHERE `id`=$id LIMIT 1");
+		$server=$result->fetch_assoc();
+		$result->close();
+
+		$row['server_id']=$server['name'];
+		array_push($alerts,$row);
+	}
+
+	return $alerts;
 }
 ?>
