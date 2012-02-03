@@ -67,6 +67,23 @@ div{
 	height: 2%;
 }
 
+/*Alerts*/
+#alerts{
+
+}
+
+span.alert_time{
+
+}
+
+span.alert_server{
+
+}
+
+span.alert_text{
+
+}
+
 /* JQuery Stuffs */
 
 #server_list .ui-selecting { background: #FECA40; }

@@ -13,4 +13,5 @@
 | To-do |
 ---------
 
-FINISH WORKING ON SERVER SELECT FUNCTION!
++FINISH WORKING ON SERVER SELECT FUNCTION!
++Test and adjust the server status image

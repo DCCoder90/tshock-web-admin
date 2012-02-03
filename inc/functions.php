@@ -67,4 +67,25 @@ function prep($string, $ht = true, $escape = true)
 	}
 	return $string;
 }
+/*Get alerts from the database*/
+function get_alerts(){
+	global $db;
+	$result=$db->query("SELECT * FROM `server_logs` WHERE `priority`=1 ORDER BY `id` DESC LIMIT 5");
+	$rows=$result->fetch_all(MYSQLI_ASSOC);
+	$result->close();
+
+	$alerts=array();
+
+	foreach($rows as $row){
+		$id=$row['server_id'];
+		$result=$db->query("SELECT `name` AS `name` FROM `servers` WHERE `id`=$id LIMIT 1");
+		$server=$result->fetch_assoc();
+		$result->close();
+
+		$row['server_id']=$server['name'];
+		array_push($alerts,$row);
+	}
+
+	return $alerts;
+}
 ?>

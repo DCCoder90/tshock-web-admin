@@ -60,6 +60,9 @@ foreach($rows as $row){
 
 $smarty->assign("servers",$servers);
 
+$alerts=get_alerts();
+$smarty->assign("alerts",$alerts);
+
 if($_SESION['logged']==1){
 	$smarty->assign("navigate",1);
 }

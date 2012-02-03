@@ -23,6 +23,7 @@
 		});
 	});
 	</script>
+	<!--End select function-->
 
 	<!--Resize function -->
 	<script language="javascript" type="text/javascript">
@@ -35,6 +36,7 @@
 		});
 	});
 	</script>
+	<!--End resize function -->
 </head>
 <body>
 
