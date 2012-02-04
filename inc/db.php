@@ -10,6 +10,7 @@ define("HASH_SALT","1234");
 //////////////////////////
 //DO NOT EDIT BELOW HERE!
 //////////////////////////
+session_start();
 
 $db = new mysqli($database['host'],$database['user'],$database['pass'],$database['db']);
 if ($db->connect_errno)

@@ -14,7 +14,15 @@ if(isset($_GET['act'])){
 			$row=$result->fetch_assoc();
 			$result->close();
 
-
+			if($user==$row['user_name']&&$pass==$row['user_pass']){
+				$_SESSION['logged']=1;
+				$_SESSION['id']=$row['id'];
+				$_SESSION['user']=$user;
+				$_SESSION['email']=$row['user_email'];
+				header("Location: ".HOME_URL."/main.php");
+			}else{
+				header("Location: ".HOME_URL."/index.php?loginerr=1");
+			}
 
 		break;
 

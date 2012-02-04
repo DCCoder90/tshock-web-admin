@@ -84,6 +84,13 @@ span.alert_text{
 
 }
 
+/**/
+
+#errormsg{
+	color: #ff0000;
+	text-decoration: underline;
+}
+
 /* JQuery Stuffs */
 
 #server_list .ui-selecting { background: #FECA40; }

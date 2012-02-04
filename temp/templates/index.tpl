@@ -2,6 +2,7 @@
 
 <center>
 <img src="{$url}/images/tshocklogo.png"><br />
+<span class="errormsg">{$error}</span><br />
 <div id="loginbox">
 <form action="{$url}/action.php?act=login" method="post">
 Username: <input type="text" name="user" id="username" value="" /><br />

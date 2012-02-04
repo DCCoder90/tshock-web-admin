@@ -68,18 +68,7 @@ function prep($string, $ht = true, $escape = true)
 	}
 	return $string;
 }
-<<<<<<< HEAD
-
-/*
-   Prepare an array to be added into the database
-   @author Sildaekar
-   @since 2012-02-02
-
-   @return array Returns array of alerts
-*/
-=======
 /*Get alerts from the database*/
->>>>>>> 127d1fc6ee5c5720079300f85efe4705c888d349
 function get_alerts(){
 	global $db;
 	$result=$db->query("SELECT * FROM `server_logs` WHERE `priority`=1 ORDER BY `id` DESC LIMIT 5");
@@ -99,5 +88,14 @@ function get_alerts(){
 	}
 
 	return $alerts;
+}
+
+function check_loggedin(){
+	if(isset($_SESSION['logged'])){
+		if($_SESSION['logged']==1&&is_int($_SESSION['id'])){
+			return true;
+		}
+	}
+	header("Location: ".HOME_URL);
 }
 ?>
