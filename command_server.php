@@ -8,7 +8,7 @@ if(isset($_GET['cmd'])){
 	$rawcmd=$_GET['rawcmd'];
 
 	//Hmm...may have these backwards...not sure, and to lazy to check now
-	$sid=(!isset($_GET['sid']))?(int)$_GET['sid']:$_POST['sid'];//Server ID
+	$sid=(!isset($_GET['sid']))?(int)$_GET['sid']:$_POST['sid'];
 
 	$result=$db->query("SELECT * FROM `servers` WHERE `id`=$sid LIMIT 1");
 	$server=$result->fetch_assoc();
