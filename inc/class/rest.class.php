@@ -8,12 +8,6 @@
  * @version 0.1
  * @access public
  */
-
-//Noon=27000.0
-//Midnight=16200.0
-//Day=150.0
-//Night=0.0
-
 class RestAPI{
 
 	protected $ip;  //Server IP

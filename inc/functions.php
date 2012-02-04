@@ -100,7 +100,37 @@ function check_loggedin(){
 }
 
 function server_time($time){
+	//Noon=27000.0
+	//Midnight=16200.0
+	//Day=150.0
+	//Night=0.0
+	switch($time){
+		case "27000.0":
+			$time="Noon";
+		break;
 
+		case "16200.0":
+			$time="Midnight";
+		break;
+
+		case "150.0":
+			$time="Day";
+		break;
+
+		case "0.0":
+			$time="Night";
+		break;
+
+		default:
+			$time=$time;
+		break;
+
+
+
+
+	}
+
+	return $time;
 }
 
 function bool2txt($bool){
