@@ -15,3 +15,8 @@
 
 +FINISH WORKING ON SERVER SELECT FUNCTION!
 +Test and adjust the server status image
+
+Need to finish working on quick broadcast, server ID needs to be added from
+server select form.
+
+Also need to finish command_server files
