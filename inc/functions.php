@@ -98,4 +98,16 @@ function check_loggedin(){
 	}
 	header("Location: ".HOME_URL);
 }
+
+function server_time($time){
+
+}
+
+function bool2txt($bool){
+	if($bool){
+		return "Yes";
+	}else{
+		return "No";
+	}
+}
 ?>
