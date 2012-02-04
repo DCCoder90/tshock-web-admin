@@ -41,12 +41,14 @@
 <body>
 
 <div id="left_content">
-{if $navigate eq 1}
-	{include file='inc/navigation.tpl'}
-{/if}
-</div>
-<div id="quick_broadcast">
-<textarea id="quickmsg" cols="15" rows="3"></textarea>
-<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
+	<div id="nav">
+		{if $navigate eq 1}
+			{include file='inc/navigation.tpl'}
+		{/if}
+	</div>
+	<div id="quick_broadcast">
+		<textarea id="quickmsg" cols="15" rows="3"></textarea>
+		<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
+	</div>
 </div>
 <div id="body_content">

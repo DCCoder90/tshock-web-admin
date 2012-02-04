@@ -31,25 +31,39 @@ a:hover {
 
 /*Misc*/
 
+/*
 div{
 	border: 2px solid gray;
-}
+}*/
 
 /*Page Sections*/
 
 #left_content{
 	height: 98%;
 	width: 15%;
+	float: left;
+	border-right: solid gray;
+}
+
+#nav{
+	float: inherit;
+}
+
+#quick_broadcast{
+	float: inherit;
 }
 
 #body_content{
 	height: 98%;
-	width: 70%;
+	width: 65%;
+	float: left;
 }
 
 #right_content{
 	height: 98%;
 	width: 15%;
+	float: left;
+	border-left:solid gray;
 }
 
 #server_status{
@@ -63,8 +77,11 @@ div{
 }
 
 #copyright{
+	clear: both;
 	width: 100%;
 	height: 2%;
+	border-top: solid gray;
+	text-align: center;
 }
 
 /*Alerts*/

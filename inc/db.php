@@ -1,12 +1,13 @@
 <?php
 $database=array(
-"host"=>"",
-"user"=>"",
+"host"=>"localhost",
+"user"=>"root",
 "pass"=>"",
-"db"=>""
+"db"=>"tshockadmin"
 );
 
 define("HASH_SALT","1234");
+error_reporting(E_ALL);
 //////////////////////////
 //DO NOT EDIT BELOW HERE!
 //////////////////////////
@@ -22,6 +23,7 @@ if ($db->connect_errno)
 ///////////////////////
 require('./inc/class/rest.class.php');
 require('./inc/class/senc.class.php');
+require('./inc/functions.php');
 require('./inc/smarty/Smarty.class.php');
 $smarty = new Smarty;
 $rest= new RestAPI;
@@ -65,7 +67,7 @@ $smarty->assign("servers",$servers);
 $alerts=get_alerts();
 $smarty->assign("alerts",$alerts);
 
-if($_SESION['logged']==1){
+if($_SESSION['logged']==1){
 	$smarty->assign("navigate",1);
 }
 ?>

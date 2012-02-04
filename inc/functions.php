@@ -92,7 +92,7 @@ function get_alerts(){
 
 function check_loggedin(){
 	if(isset($_SESSION['logged'])){
-		if($_SESSION['logged']==1&&is_int($_SESSION['id'])){
+		if($_SESSION['logged']==1){
 			return true;
 		}
 	}

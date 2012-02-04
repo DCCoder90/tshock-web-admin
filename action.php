@@ -1,4 +1,5 @@
 <?php
+require("inc/db.php");
 $senc=new sencryption;
 
 if(isset($_GET['act'])){
@@ -8,7 +9,7 @@ if(isset($_GET['act'])){
 				die("Form not submitted!");
 			}
 			$user=$_POST['user'];
-			$pass=$senc->shash($_POST['pass'],HASH_SALT);
+			$pass=$senc->shash($_POST['pass']);
 
 			$result=$db->query("SELECT * FROM `users` WHERE `user_name`='$user'");
 			$row=$result->fetch_assoc();
@@ -20,6 +21,7 @@ if(isset($_GET['act'])){
 				$_SESSION['user']=$user;
 				$_SESSION['email']=$row['user_email'];
 				header("Location: ".HOME_URL."/main.php");
+				die(HOME_URL);
 			}else{
 				header("Location: ".HOME_URL."/index.php?loginerr=1");
 			}
