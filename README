@@ -15,9 +15,13 @@ Features
 +Plugin upload
 +Send server broadcast
 
+Developers
+-----------
+Sildaekar
+
 
 ----------------------------
 
 Will use MySQLi to interact with mysql database.
-Admin panel will also directly interact with tshock's database.
-This will give it an easy method of item/user bans.
+Admin panel will use the RestAPI to interact with TShock and
+give more administration features.
