@@ -45,4 +45,8 @@
 	{include file='inc/navigation.tpl'}
 {/if}
 </div>
+<div id="quick_broadcast">
+<textarea id="quickmsg" cols="15" rows="3"></textarea>
+<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
+</div>
 <div id="body_content">
