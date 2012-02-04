@@ -1,6 +1,6 @@
 {include file='inc/header.tpl'}
 
-<form action="{$url/command_world.php" method="get">
+<form action="{$url}/command_world.php" method="get">
 <input type="hidden" name="sid" value="">
 <table>
 <tr>
