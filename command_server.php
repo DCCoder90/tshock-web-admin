@@ -5,6 +5,7 @@ check_loggedin();
 if(isset($_GET['cmd'])){
 	$cmd=$_GET['cmd'];
 	$msg=$_POST['msg'];
+	$rawcmd=$_GET['rawcmd'];
 
 	//Hmm...may have these backwards...not sure, and to lazy to check now
 	$sid=(!isset($_GET['sid']))?(int)$_GET['sid']:$_POST['sid'];//Server ID
@@ -19,11 +20,42 @@ if(isset($_GET['cmd'])){
 		case "cast":
 			$resp=$rest->server_broadcast($msg);
 			$response="Broadcast Succesfull.";
-			break;
+		break;
+
+		case "status":
+			$resp=$rest->server_status();
+
+			$players=explode(",",$resp['players']);
+
+			foreach($players as $player)
+			{
+				$p[]="<a href=\"".HOME_URL."\"/command_players.php?cmd=read&plr=".$player."&sid=".$sid."\">".$player."</a>";
+			}
+			$response="World Name: ".$resp['name']."<br />
+				Port: ".$resp['port']."<br />
+				Player Count: ".$resp['playercount']."<br />
+				Players: ";
+
+			foreach($p as $p){
+				$response=$response.$p.",";
+			}
+
+			$response=$response."<br />";
+		break;
+
+		case "off":
+			$resp=$rest->server_off(true,false);
+			$response="Server shutting down.  Saving world...";
+		break;
+
+		case "rawcmd":
+			$resp=$rest->server_rawcmd($rawcmd);
+			$response=$resp['response'];
+		break;
 
 		default:
 			die("Command not specified");
-			break;
+		break;
 
 	}
 	$smarty->assign("response",$response);
