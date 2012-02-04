@@ -1,4 +1,6 @@
 <?php
+include("../inc/db.php");
+
 //Creates the server status image
 $name=urldecode($_GET['name']);
 $playercount=(int)$_GET['playercount'];
