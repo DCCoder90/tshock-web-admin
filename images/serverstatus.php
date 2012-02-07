@@ -1,5 +1,6 @@
 <?php
 chdir("../");
+define("IMAGE",true);
 include("./inc/db.php");
 
 //Creates the server status image
@@ -16,7 +17,7 @@ if($status==200){
 
 $img=ImageCreateFromJPEG(HOME_URL."/images/".$image);
 
-
+//$img=ImageCreateFromJPEG("./images/".$image);
 
 if($status==200){
 	$statustxt="Up";

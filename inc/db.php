@@ -56,15 +56,27 @@ $smarty->assign("meta_desc",$row['meta_desc']);
 //Get all servers and check their status
 /////////////////////////////////////////
 
-$servers=array();
+if(!defined("IMAGE")){
 
-$result=$db->query("SELECT * FROM `servers` ORDER BY `id` ASC LIMIT 5");
-$rows=$result->fetch_all(MYSQLI_ASSOC);
-foreach($rows as $row){
-	$rest->set_server($row['ip'],$row['restport']);
-	$server=$rest->server_status();
-	$server=array("id"=>$row['id'],"status"=>$server['status'],"playercount"=>$server['playercount'],"name"=>$row['name'],"port"=>$row['port']);
-	array_push($servers,$server);
+	$servers=array();
+
+	$result=$db->query("SELECT * FROM `servers` ORDER BY `id` ASC LIMIT 5");
+	$rows=$result->fetch_all(MYSQLI_ASSOC);
+	foreach($rows as $row){
+		$rest->set_server($row['ip'],$row['restport']);
+		$server=$rest->server_status();
+
+		if($server==null){
+			$server['status']=500;
+			$server['playercount']=0;
+		}
+
+		$server=array("id"=>$row['id'],"status"=>$server['status'],"playercount"=>$server['playercount'],"name"=>$row['name'],"port"=>$row['port']);
+		array_push($servers,$server);
+	}
+
+}else{
+	$servers="";
 }
 
 $smarty->assign("servers",$servers);
