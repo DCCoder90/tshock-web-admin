@@ -23,7 +23,9 @@
 					   </select>
 	</td>
 </tr>
-</table>
+</table><br /><br />
+
+<input type="submit" value="Execute!" />
 </form>
 <br /><br />
 
