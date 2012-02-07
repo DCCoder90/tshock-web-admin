@@ -53,5 +53,5 @@ if(isset($_GET['cmd'])){
 	$smarty->assign("response",$response);
 }
 
-$smarty->display('command_server.tpl');
+$smarty->display('command_user.tpl');
 ?>
