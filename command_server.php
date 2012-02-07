@@ -4,11 +4,10 @@ check_loggedin();
 
 if(isset($_GET['cmd'])){
 	$cmd=$_GET['cmd'];
-	$msg=$_POST['msg'];
+	$msg=(!isset($_GET['msg']))?(int)$_POST['msg']:(int)$_GET['msg'];;
 	$rawcmd=$_GET['rawcmd'];
 
-	//Hmm...may have these backwards...not sure, and to lazy to check now
-	$sid=(!isset($_GET['sid']))?(int)$_GET['sid']:$_POST['sid'];
+	$sid=(!isset($_GET['sid']))?(int)$_POST['sid']:(int)$_GET['sid'];
 
 	$result=$db->query("SELECT * FROM `servers` WHERE `id`=$sid LIMIT 1");
 	$server=$result->fetch_assoc();

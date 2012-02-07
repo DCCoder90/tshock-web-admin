@@ -12,12 +12,11 @@ if(isset($_GET['cmd'])){
 	$server=$result->fetch_assoc();
 	$result->close();
 
-	$rest->set_server($server['ip'],$server['port'],null,$server['user_name'],$server['user_pass']);
+	$rest->set_server($server['ip'],$server['restport'],null,$server['user_name'],$server['user_pass']);
 
 	switch($cmd){
 		case "read":
 			$resp=$rest->world_read();
-
 			$resp['time']=server_time($resp['time']);
 
 			$response="
