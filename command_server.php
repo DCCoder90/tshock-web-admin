@@ -4,7 +4,7 @@ check_loggedin();
 
 if(isset($_GET['cmd'])){
 	$cmd=$_GET['cmd'];
-	$msg=(!isset($_GET['msg']))?(int)$_POST['msg']:(int)$_GET['msg'];;
+	$msg=(!isset($_GET['msg']))?$_POST['msg']:$_GET['msg'];;
 	$rawcmd=(isset($_GET['rawcmd']))?$_GET['rawcmd']:"";
 
 	$sid=(!isset($_GET['sid']))?(int)$_POST['sid']:(int)$_GET['sid'];
@@ -48,8 +48,16 @@ if(isset($_GET['cmd'])){
 		break;
 
 		case "rawcmd":
-			$resp=$rest->server_rawcmd($rawcmd);
-			$response=$resp['response'];
+			$resp=$rest->server_rawcmd(urlencode($rawcmd));
+			if(isset($resp['response'])){
+				$response=$resp['response'];
+			}else{
+				if($resp['status']==200){
+					$response="Command succesful";
+				}else{
+					$response="Command failed";
+				}
+			}
 		break;
 
 		default:
