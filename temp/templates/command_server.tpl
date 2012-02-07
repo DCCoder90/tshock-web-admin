@@ -4,7 +4,7 @@
 <input type="hidden" name="sid" value="">
 <table>
 <tr>
-		<td colspan="2"><input type="radio" name="cmd" value="autosave">Raw Command<br />
+		<td colspan="2"><input type="radio" name="cmd" value="rawcmd">Raw Command<br />
 		<textarea name="rawcmd"></textarea>
 	</td>
 	<td colspan="2"><input type="radio" name="cmd" value="cast">Broadcast<br />

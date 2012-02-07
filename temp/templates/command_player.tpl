@@ -1,6 +1,6 @@
 {include file='inc/header.tpl'}
 
-<form action="{$url}/command_user.php" method="get">
+<form action="{$url}/command_player.php" method="get">
 <input type="hidden" name="sid" value="">
 
 Player: <input type="text" name="usr" /><br />
