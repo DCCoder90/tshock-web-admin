@@ -55,10 +55,8 @@ $result=$db->query("SELECT * FROM `servers` ORDER BY `id` ASC LIMIT 5");
 $rows=$result->fetch_all(MYSQLI_ASSOC);
 foreach($rows as $row){
 	$rest->set_server($row['ip'],$row['restport']);
-	$server=$rest->server_status();
-	if(!$status){
+	//$server=$rest->server_status();
 		$server=array("status"=>500,"playercount"=>0,"name"=>$row['name'],"port"=>$row['port']);
-	}
 	array_push($servers,$server);
 }
 
