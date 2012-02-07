@@ -27,13 +27,3 @@ $("#quickbrdcst").click(function(){
 	);
 	$('textarea#quickmsg').text('Broadcast complete');
 });
-
-
-$(function() {
-	$( "#server_status" ).resizable({
-		maxHeight: 250,
-		maxWidth: 350,
-		minHeight: 150,
-		minWidth: 200
-	});
-});

@@ -9,7 +9,7 @@ $database=array(
 define("HASH_SALT","1234");
 define("DBSESS",false);  //Set to true to use the database to store sessions
 
-error_reporting(E_ALL);
+error_reporting(0);
 //////////////////////////
 //DO NOT EDIT BELOW HERE!
 //////////////////////////
