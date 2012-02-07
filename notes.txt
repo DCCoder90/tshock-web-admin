@@ -13,8 +13,7 @@
 | To-do |
 ---------
 
-+FINISH WORKING ON SERVER SELECT FUNCTION!
-+Test and adjust the server status image
-
-Need to finish working on quick broadcast, server ID needs to be added from
-server select form.
++Need to finish working on quick broadcast.
++Need to finish working on server modification files
++Need to finish site modification files
++Need to add an autocomplete function for typing in player/user names
