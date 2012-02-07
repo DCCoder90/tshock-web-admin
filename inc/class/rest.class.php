@@ -25,16 +25,22 @@ class RestAPI{
 		$this->pass=$pass;
 	}
 
-	private function get_json($endpoint=null,$gettoken=true){
-		if($gettoken){
+	public function __destruct(){
+		unset($this->ip,$this->port,$this->token,$this->user,$this->pass);
+	}
+
+	private function get_json($endpoint=null,$gettoken=true,$set=false){
+		if($gettoken==true){
 			$token=$this->get_token();
 			$endpoint=$endpoint."&token=".$token;
-		}elseif($gettoken=="set"){
+		}
+		if($set==true){
 			$token=$this->get_token();
 			$endpoint=$endpoint."?token=".$token;
 		}
 		$contents=file_get_contents("http://".$this->ip.":".$this->port.$endpoint);
 		$json=json_decode($contents,true);
+		unset($endpoint,$contents,$token,$gettoken);
 		return $json;
 	}
 
@@ -44,7 +50,7 @@ class RestAPI{
 
 	private function get_token(){
 		if($this->token==""||$this->token==null){
-			$json=$this->get_json("/token/create/".$this->user."/".$this->pass);
+			$json=$this->get_json("/token/create/".$this->user."/".$this->pass,false);
 			if($json['status']==200){
 				$this->token=$json['token'];
 				return $this->token;
@@ -69,7 +75,7 @@ class RestAPI{
 	}
 
 	public function player_lists(){
-		$json=$this->get_json("/lists/players","set");
+		$json=$this->get_json("/lists/players",false,true);
 		return $json;
 	}
 
@@ -86,7 +92,7 @@ class RestAPI{
 	}
 
 	public function server_broadcast($msg=null){
-		$json=$this->get_json("/v2/server/broadcast?msg=".$msg);
+		$json=$this->get_json("/v2/server/broadcast?msg=".$msg,true);
 		return $json;
 	}
 
@@ -159,32 +165,32 @@ class RestAPI{
 	/////////////////////////
 
 	public function world_read(){
-		$json=$this->get_json("/world/read","set");
+		$json=$this->get_json("/world/read",false,true);
 		return $json;
 	}
 
 	public function world_meteor(){
-		$json=$this->get_json("/world/meteor","set");
+		$json=$this->get_json("/world/meteor",false,true);
 		return $json;
 	}
 
 	public function world_bloodmoon($moon=false){
-		$json=$this->get_json("/world/bloodmoon/".$moon,"set");
+		$json=$this->get_json("/world/bloodmoon/".$moon,false,true);
 		return $json;
 	}
 
 	public function world_save(){
-		$json=$this->get_json("/v2/world/save","set");
+		$json=$this->get_json("/v2/world/save",false,true);
 		return $json;
 	}
 
 	public function world_autosave($save=true){
-		$json=$this->get_json("/v2/world/autosave/state/".$save,"set");
+		$json=$this->get_json("/v2/world/autosave/state/".$save,false,true);
 		return $json;
 	}
 
 	public function world_butcher($killfriendly=false){
-		$json=$this->get_json("/v2/world/butcher?killfriendly=".$killfriendly);
+		$json=$this->get_json("/v2/world/butcher?killfriendly=".$killfriendly,true);
 		return $json;
 	}
 
@@ -193,7 +199,7 @@ class RestAPI{
 	/////////////////////////
 
 	public function users_activelist(){
-		$json=$this->get_json("/users/activelist","set");
+		$json=$this->get_json("/users/activelist",false,true);
 		return $json;
 	}
 
