@@ -7,6 +7,8 @@ $database=array(
 );
 
 define("HASH_SALT","1234");
+define("DBSESS",false);  //Set to true to use the database to store sessions
+
 error_reporting(E_ALL);
 //////////////////////////
 //DO NOT EDIT BELOW HERE!
@@ -27,6 +29,10 @@ require('./inc/functions.php');
 require('./inc/smarty/Smarty.class.php');
 $smarty = new Smarty;
 $rest= new RestAPI;
+
+if(DBSESS==true){
+	require('./inc/class/sessions.class.php');
+}
 
 ///////////////////
 //Get site settings
