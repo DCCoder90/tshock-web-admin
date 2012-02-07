@@ -1,5 +1,5 @@
 body,html{
-		background-color:#000000;
+		background-color:#FFFFFF;
 		font-size:14px;
 		font-family:arial;
 		margin:0px;
@@ -110,7 +110,8 @@ span.alert_text{
 
 /* JQuery Stuffs */
 
-#server_list .ui-selecting { background: #FECA40; }
-#server_list .ui-selected { background: #F39814; color: white; }
-#server_list { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-#server_list li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+#feedback { font-size: 1.4em; }
+.server_list .ui-selecting { background: #FECA40; }
+.server_list .ui-selected { background: #F39814; color: white; }
+.server_list { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+.server_list li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
