@@ -25,6 +25,7 @@ if ($db->connect_errno)
 ///////////////////////
 require('./inc/class/rest.class.php');
 require('./inc/class/senc.class.php');
+require('./inc/class/parser.class.php');
 require('./inc/functions.php');
 require('./inc/smarty/Smarty.class.php');
 $smarty = new Smarty;
