@@ -39,10 +39,11 @@ div{
 /*Page Sections*/
 
 #left_content{
-	height: 98%;
+	height: 95%;
 	width: 15%;
 	float: left;
 	border-right: solid gray;
+	overflow: auto;
 }
 
 #nav{
@@ -54,16 +55,18 @@ div{
 }
 
 #body_content{
-	height: 98%;
+	height: 95%;
 	width: 65%;
 	float: left;
+	overflow: auto;
 }
 
 #right_content{
-	height: 98%;
-	width: 15%;
+	height: 95%;
+	width: 18%;
 	float: left;
 	border-left:solid gray;
+	overflow: auto;
 }
 
 #server_status{
