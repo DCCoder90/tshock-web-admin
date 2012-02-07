@@ -6,37 +6,12 @@
 	<meta name="keywords" content="{$meta_keywords}" />
 	<meta name="author" content="Sildaekar aka Darkvengance" />
 	<link rel="icon" type="image/png" href="{$url}/favicon.ico" />
-	<script language="javascript" type="text/javascript" src="{$url}/inc/javascript/jquery/jquery.js">
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load("jquery", "1.7.1");
+		google.load("jqueryui", "1.8.16");
 	</script>
-
-	<!--Select function -->
-	<script language="javascript" type="text/javascript">
-	$(function() {
-		$( "#server_list" ).selectable({
-			stop: function() {
-				var result = $( "#select-result" ).empty();
-				$( ".ui-selected", this ).each(function() {
-					var index = $( "#selectable li" ).index( this );
-					result.append( " #" + ( index + 1 ) );
-				});
-			}
-		});
-	});
-	</script>
-	<!--End select function-->
-
-	<!--Resize function -->
-	<script language="javascript" type="text/javascript">
-	$(function() {
-		$( "#server_status" ).resizable({
-			maxHeight: 250,
-			maxWidth: 350,
-			minHeight: 150,
-			minWidth: 200
-		});
-	});
-	</script>
-	<!--End resize function -->
+	<script type="text/javascript" src="{$url}/inc/javascript/common.js"></script>
 </head>
 <body>
 
@@ -47,6 +22,7 @@
 		{/if}
 	</div>
 	<div id="quick_broadcast">
+		<input type="hidden" name="sid" value="0" />
 		<textarea id="quickmsg" cols="15" rows="3"></textarea>
 		<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
 	</div>

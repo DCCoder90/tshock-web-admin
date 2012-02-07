@@ -2,11 +2,13 @@
 <div id="right_content">
 <div id="server_status">
 <!--Server status and selection goes here-->
-<ul id="server_list">
+
+<ol class="server_list">
 {foreach from=$servers item=server}
-	<li><img src="{$url}/images/serverstatus.php?name={$server.name}&status={$server.status}&port={$server.port}&playercount={$server.playercount}" alt="{$server.name}" /></li>
+	<li id="{$server.id}" class="ui-widget-content"><img src="{$url}/images/serverstatus.php?name={$server.name}&status={$server.status}&port={$server.port}&playercount={$server.playercount}" alt="{$server.name}" /></li>
 {/foreach}
-</ul>
+</ol>
+
 </div>
 <div id="alerts">
 <!--Major alerts/erros go here -->
