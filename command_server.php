@@ -5,7 +5,7 @@ check_loggedin();
 if(isset($_GET['cmd'])){
 	$cmd=$_GET['cmd'];
 	$msg=(!isset($_GET['msg']))?(int)$_POST['msg']:(int)$_GET['msg'];;
-	$rawcmd=$_GET['rawcmd'];
+	$rawcmd=(isset($_GET['rawcmd']))?$_GET['rawcmd']:"";
 
 	$sid=(!isset($_GET['sid']))?(int)$_POST['sid']:(int)$_GET['sid'];
 
