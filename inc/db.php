@@ -52,6 +52,15 @@ $smarty->assign("site_title",$row['site_title']);
 $smarty->assign("meta_keywords",$row['meta_keywords']);
 $smarty->assign("meta_desc",$row['meta_desc']);
 
+///////////////////
+//SMARTY Cacheing
+///////////////////
+
+$smarty->debugging=true;
+$smarty->caching = 0; //Set this to "0" to turn off cacheing
+$smarty->cache_lifetime = 300;
+$smarty->compile_check = false;
+
 /////////////////////////////////////////
 //Get all servers and check their status
 /////////////////////////////////////////
