@@ -1,18 +1,18 @@
 {include file='inc/header.tpl'}
 
-<form action="{$url}/servers.php" method="post">
-<input type="hidden" name="add" value="1" />
+<form action="{$url}/servers.php" method="post" id="validateform">
+<input type="hidden" name="act" value="update" />
 
 <b>Server Info:</b><br />
 
-Server Name: <input type="text" name="name" /><br />
-Server IP Address: <input type="text" name="ip" /><br />
-Server Port: <input type="text" name="port" /><br />
-RestAPI Port: <input type="text" name="restport" /><br /><br />
+Server Name: <input type="text" name="name" value="{$svr.name}" class="required"/><br />
+Server IP Address: <input type="text" name="ip" value="{$svr.ip}" class="required" /><br />
+Server Port: <input type="text" name="port" value="{$svr.port}" class="required"/><br />
+RestAPI Port: <input type="text" name="restport" value="{$svr.restport}" class="required"/><br /><br />
 
 <b>SuperAdmin Info:</b><br />
-Username: <input type="text" name="user" /><br />
-Password: <input type="text" name="pass" /><br /><br />
+Username: <input type="text" name="user" value="{$svr.user}" class="required"/><br />
+Password: <input type="text" name="pass" value="{$svr.pass}" class="required"/><br /><br />
 
 <b>Log Info:</b><br />
 Log Access: <select name="ltype">

@@ -11,6 +11,7 @@
 		google.load("jquery", "1.7.1");
 		google.load("jqueryui", "1.8.16");
 	</script>
+	<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 	<script type="text/javascript" src="{$url}/inc/javascript/common.js"></script>
 </head>
 <body>
@@ -26,5 +27,10 @@
 		<textarea id="quickmsg" cols="15" rows="3"></textarea>
 		<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
 	</div>
+	{if $message neq ""}
+	<div id="feedback">
+		{$message}
+	</div>
+	{/if}
 </div>
 <div id="body_content">
