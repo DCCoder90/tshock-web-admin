@@ -26,9 +26,15 @@ if(isset($_GET['cmd'])){
 
 			$players=explode(",",$resp['players']);
 
+			$i=0;
 			foreach($players as $player)
 			{
-				$p[]="<a href=\"".HOME_URL."\"/command_players.php?cmd=read&plr=".$player."&sid=".$sid."\">".$player."</a>";
+				if($i!=0){
+					$player=substr($player,1);
+				}
+				$p[]="<a href=\"".HOME_URL."/command_player.php?cmd=read&usr=".$player."&sid=".$sid."\">".$player."</a>";
+
+				$i++;
 			}
 			$response="World Name: ".$resp['name']."<br />
 				Port: ".$resp['port']."<br />
