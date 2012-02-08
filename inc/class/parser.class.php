@@ -43,9 +43,10 @@ class parser{
 	public function parse_inventory($data){
 		$inventory=explode(",",$data);
 		$inv=array();
+
 		foreach($inventory as $items){
 			$item=explode(":",$items);
-			if($item[0]=""&&$item[1]==0){
+			if($item[0]==""||$item[1]==0){
 				$temp['name']="Empty Slot";
 				$temp['amount']=0;
 			}else{
