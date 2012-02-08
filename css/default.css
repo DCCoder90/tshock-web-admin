@@ -122,8 +122,15 @@ span.alert_text{
 }
 .server_list .ui-selected {
 	opacity:0.6;
-	filter:alpha(opacity=60); /* For IE8 and earlier */
+	filter:alpha(opacity=60); /* For IE8 and earlier padding: 0.4em; */
 	color: white;
 }
 .server_list { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-.server_list li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+.server_list li { padding-bottom:85px; padding-top: 0px; margin: 3px;  font-size: 1.4em; height: 18px; }
+
+* { font-family: Verdana; font-size: 96%; }
+label { width: 10em; float: left; }
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+p { clear: both; }
+.submit { margin-left: 12em; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top; }
