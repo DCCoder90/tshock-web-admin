@@ -10,6 +10,7 @@ class parser{
 			$meta=explode(":",substr($line,22));
 			$log['type']=$meta[0]; //Ex. TShock, StatTracker, Utils, etc...
 			$log['flag']=$meta[1]; //Ex. INFO
+			$log['date']=$datetime;//Date log was made
 
 			if(count($meta)>2){
 				if(strpos($meta[2],"executed")>0){
