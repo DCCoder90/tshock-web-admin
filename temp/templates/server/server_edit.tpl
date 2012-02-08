@@ -11,8 +11,8 @@ Server Port: <input type="text" name="port" value="{$svr.port}" class="required"
 RestAPI Port: <input type="text" name="restport" value="{$svr.restport}" class="required"/><br /><br />
 
 <b>SuperAdmin Info:</b><br />
-Username: <input type="text" name="user" value="{$svr.user}" class="required"/><br />
-Password: <input type="text" name="pass" value="{$svr.pass}" class="required"/><br /><br />
+Username: <input type="text" name="user" value="{$svr.user_name}" class="required"/><br />
+Password: <input type="text" name="pass" value="{$svr.user_pass}" class="required"/><br /><br />
 
 <b>Log Info:</b><br />
 Log Access: <select name="ltype">

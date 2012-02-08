@@ -8,7 +8,7 @@
 <option value="add">Add Server</option>
 <option value="edit">Edit Server</option>
 <option value="del">Delete Server</option>
-</select>&nbsp;&nbsp;<input type="submit" name="submitt" value="Execute!" />
+</select>&nbsp;&nbsp;<input type="submit" name="submit" value="Execute!" />
 </form>
 
 {include file='inc/footer.tpl'}
