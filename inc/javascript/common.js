@@ -27,3 +27,13 @@ $("#quickbrdcst").click(function(){
 	);
 	$('textarea#quickmsg').text('Broadcast complete');
 });
+
+$(document).ready(function(){
+   // $("#validateform").validate();
+	$("#validateform").validate({
+	 submitHandler: function(form) {
+	   $('[class="validateform"]').val("validatedform");
+	   $(form).submit();
+	 }
+	});
+});
