@@ -87,6 +87,10 @@ div{
 	text-align: center;
 }
 
+#feedbackmsg{
+	float: inherit;
+}
+
 /*Alerts*/
 #alerts{
 

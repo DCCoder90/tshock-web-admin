@@ -28,7 +28,7 @@
 		<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
 	</div>
 	{if $message neq ""}
-	<div id="feedback">
+	<div id="feedbackmsg">
 		{$message}
 	</div>
 	{/if}
