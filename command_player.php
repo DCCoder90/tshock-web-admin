@@ -22,16 +22,16 @@ if(isset($_GET['cmd'])){
 
 			$inventory=$parse->parse_inventory($resp['inventory']);
 			$pos=explode(",",$resp['position']);
-			$response="Nickname: ".$resp['nickname']."<br />
-						Username: ".$resp['username']."<br />
-						IP: ".$resp['ip']."<br />
-						Group: ".$resp['group']."<br />
-						Position: X-".$pos[0]."  Y-".$pos[1]."<br />
-						Inventory: <br />";
+			$response="<b>Nickname:</b> ".$resp['nickname']."<br />
+						<b>Username:</b> ".$resp['username']."<br />
+						<b>IP:</b> ".$resp['ip']."<br />
+						<b>Group:</b> ".$resp['group']."<br />
+						<b>Position:</b> X-".$pos[0]."  Y-".$pos[1]."<br />
+						<b>Inventory:</b> <br />";
 			foreach($inventory as $item){
 				$response=$response.$item['name']."-".$item['amount']."<br />";
 			}
-			$response=$response."Buffs:<br />".$resp['buffs'];
+			$response=$response."<b>Buffs:</b><br />".$resp['buffs'];
 		break;
 
 		case "kick":
