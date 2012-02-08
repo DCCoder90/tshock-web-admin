@@ -17,3 +17,6 @@
 +Need to finish working on server modification files
 +Need to finish site modification files
 +Need to add an autocomplete function for typing in player/user names
+
++Create plugin that automatically adds logs to database?
++Add form validation using jquery
