@@ -140,4 +140,11 @@ function bool2txt($bool){
 		return "No";
 	}
 }
+
+function clearcache(){
+	global $smarty;
+	if($smarty->caching!=true&&$smarty->caching!=2){
+		$smarty->clear_all_cache();
+	}
+}
 ?>
