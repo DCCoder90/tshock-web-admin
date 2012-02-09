@@ -4,7 +4,7 @@ check_loggedin();
 
 if(isset($_GET['cmd'])){
 	$cmd=$_GET['cmd'];
-	$user=(!isset($_GET['usr']))?$_POST['usr']:$_GET['usr'];
+	$user=(!isset($_GET['usr']))?$_POST['usr']:urldecode($_GET['usr']);
 	$reason=(!isset($_GET['rsn']))?null:$_GET['rsn'];
 
 	$sid=(!isset($_GET['sid']))?(int)$_POST['sid']:(int)$_GET['sid'];
