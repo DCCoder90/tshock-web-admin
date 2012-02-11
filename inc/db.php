@@ -56,7 +56,7 @@ $smarty->assign("meta_desc",$row['meta_desc']);
 //SMARTY Cacheing
 ///////////////////
 
-$smarty->debugging=true;
+$smarty->debugging=false;
 $smarty->caching = 0; //Set this to "0" to turn off cacheing
 $smarty->cache_lifetime = 300;
 $smarty->compile_check = false;
@@ -95,5 +95,21 @@ $smarty->assign("alerts",$alerts);
 
 if($_SESSION['logged']==1){
 	$smarty->assign("navigate",1);
+}
+
+if(isset($_POST['quickcast'])){
+	$sid=(int)$_POST['sid'];
+	$msg=$_POST['quickmsg'];
+
+	$result=$db->query("SELECT * FROM `servers` WHERE `id`=$sid LIMIT 1");
+	$server=$result->fetch_assoc();
+	$result->close();
+
+	$rest->set_server($server['ip'],$server['restport'],null,$server['user_name'],$server['user_pass']);
+
+	$resp=$rest->server_broadcast($msg);
+	$response="Broadcast Succesfull.";
+	$smarty->assign("message",$response);
+	unset($sid,$result,$server2,$resp);
 }
 ?>

@@ -24,9 +24,11 @@
 		{/if}
 	</div>
 	<div id="quick_broadcast">
-		<input type="hidden" name="sid" value="0" />
-		<textarea id="quickmsg" cols="15" rows="3"></textarea>
-		<input type="submit" name="submit" id="quickbrdcst" value="Broadcast!">
+		<form action="" method="post">
+			<input type="hidden" name="sid" value="0" />
+			<textarea id="quickmsg" cols="15" rows="3"></textarea>
+			<input type="submit" name="quickcast" id="quickbrdcst" value="Broadcast!">
+		</form>
 	</div>
 	{if $message neq ""}
 	<div id="feedbackmsg">
