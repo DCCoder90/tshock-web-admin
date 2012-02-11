@@ -13,7 +13,6 @@
 | To-do |
 ---------
 
-+Need to finish working on quick broadcast.
 +Need to finish working on server modification files
 +Need to finish site modification files
 +Need to add an autocomplete function for typing in player/user names

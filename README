@@ -3,16 +3,22 @@ Tshock Web Admin is a project aimed at allowing full administration of TShock se
 Features
 --------------------
 
-+Priveledge Adjustment
-+Schedule broadcasts
-+Server start/stop/restart
-+Ban/unban Users
-+Ban/unban Items
-+Map Uploading
-+Adjust User priviledges
-+Easy editing of the config file
-+Reload settings/plugins
-+Plugin upload
++Server Status						- Complete
++Read players/users					- Complete
++Run raw commands					- Complete
++Ban/unban Users					- Complete
++Multiple user access				- Incomplete
++Reload settings/plugins 			- Incomplete
+
++User access priveledges			- Future release
++Priveledge Adjustment				- Future release
++Schedule broadcasts				- Future release
++Server start/stop/restart			- Future release
++Ban/unban Items					- Future release
++Map Uploading						- Future release
++Adjust User priviledges			- Future release
++Easy editing of the config file 	- Future release
++Plugin upload 						- Future release
 +Send server broadcast
 
 Developers
